@@ -1,0 +1,90 @@
+﻿<Window x:Class="WpfApp30._2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp30._2"
+        mc:Ignorable="d"
+        Title="MainWindow"
+	Width="600"
+	Height="485.526"
+	Loaded="MainWindow_OnLoaded"
+	WindowStartupLocation="CenterScreen"
+	>
+    <Border Padding="10">
+        <StackPanel Orientation="Vertical">
+            <GroupBox
+				Height="50"
+				Padding="5"
+				HorizontalAlignment="Center"
+				Header="Type Werknemer">
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton
+						x:Name="rbCommissiewerker"
+						Checked="rbCommissiewerker_Checked"
+						Content="Commissiewerker" />
+                    <RadioButton
+						x:Name="rbStukwerker"
+						Margin="40,0,0,0"
+						Checked="rbStukwerker_Checked"
+						Content="Stukwerker" />
+                    <RadioButton
+						x:Name="rbUurweker"
+						Margin="40,0,0,0"
+						Checked="rbUurweker_Checked"
+						Content="Uurweker" />
+                    <RadioButton
+						x:Name="rbWerknemer"
+						Margin="40,0,0,0"
+						Checked="rbWerknemer_Checked"
+						Content="Werknemer" />
+                </StackPanel>
+            </GroupBox>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel
+					Grid.Column="0"
+					Margin="5"
+					Orientation="Vertical">
+                    <TextBlock Margin="0,10,0,0" Text="Naam" />
+                    <TextBlock Margin="0,10,0,0" Text="Voornaam" />
+                    <TextBlock Margin="0,10,0,0" Text="Loon" />
+                    <TextBlock x:Name="txtbAantal" Margin="0,10,0,0" Text="Aantal" />
+                    <TextBlock Margin="0,10,0,0" Text="Commissie" />
+                </StackPanel>
+                <StackPanel
+					Grid.Column="1"
+					Margin="5"
+					Orientation="Vertical">
+                    <TextBox x:Name="txtNaam" Margin="0,10,0,0" />
+                    <TextBox x:Name="txtVoornaam" Margin="0,10,0,0" />
+                    <TextBox x:Name="txtLoon" Margin="0,10,0,0" />
+                    <TextBox x:Name="txtAantal" Margin="0,10,0,0" />
+                    <TextBox x:Name="txtCommissie" Margin="0,10,0,0" />
+                </StackPanel>
+                <StackPanel
+					Grid.Column="2"
+					Margin="5"
+					VerticalAlignment="Bottom"
+					Orientation="Vertical">
+                    <Button
+						x:Name="btnToevoegen"
+						Click="btnToevoegen_Click"
+						Content="Toevoegen" />
+                </StackPanel>
+            </Grid>
+            <ListBox
+				x:Name="lbWerknemer"
+				Height="150"
+				Margin="0,30,0,0" />
+            <StackPanel Orientation="Horizontal" >
+                <RadioButton Margin="10" Name="rbtnNaam" Content="volgens Naam" Checked="rbtnNaam_Checked"/>
+                <RadioButton Margin="10" Name="rbtnVerdiensten" Content="volgens verdiensten" Checked="rbtnVerdiensten_Checked"/>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</Window>
